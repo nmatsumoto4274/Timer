@@ -33,7 +33,7 @@ function count() {
     document.getElementById("time_text").innerHTML = time.showTime;
 
     // 00:00になったら停止
-    if (time.showTime == "01:59") {
+    if (time.showTime == "00:00") {
         clearInterval(intervalId);
         let audio = new Audio("alerm.mp3");
         audio.play();
