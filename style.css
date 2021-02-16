@@ -5,3 +5,7 @@ div.roboto_mono {
 h2.timer {
     font-size: 48px;
 }
+
+h2.alert {
+    color: red;
+}

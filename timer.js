@@ -33,11 +33,12 @@ function count() {
     document.getElementById("time_text").innerHTML = time.showTime;
 
     // 00:00になったら停止
-    if (time.showTime == "00:00") {
+    if (time.showTime == "01:59") {
         clearInterval(intervalId);
-        alert("It's Time!");
+        let audio = new Audio("alerm.mp3");
+        audio.play();
+        document.getElementById("alert").innerHTML = "It's time!";
     }
-
 }
 
 // startボタンを押下した時の処理
