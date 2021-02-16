@@ -6,7 +6,7 @@ class Time {
     }
 }
 
-// 0埋め
+// 0埋め・mm:ss表示
 // dt.getMinutes() or dt.getSeconds()
 function makeShowTime(dt) {
     console.log(dt);
@@ -33,4 +33,8 @@ function count() {
 // startボタンを押下した時の処理
 function start() {
     setInterval("count()", 1000);
+
+    // ボタンを非活性
+    var start_buttoon = document.getElementById("start_button");
+    start_buttoon.disabled = "disabled";
 }
