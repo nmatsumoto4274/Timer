@@ -22,19 +22,31 @@ window.onload = function () {
     document.getElementById("time_text").innerHTML = time.showTime;
 }
 
+//インターバルのID
+var intervalId = null;
+
 // 時間の更新
 function count() {
     time.date = new Date(time.date.getTime() - 1 * 1000);
     time.showTime = makeShowTime(time.date);
     console.log(time);
     document.getElementById("time_text").innerHTML = time.showTime;
+
+    // 00:00になったら停止
+    if (time.showTime == "01:58") {
+        clearInterval(intervalId);
+        alert("It's Time!");
+    }
+
 }
 
 // startボタンを押下した時の処理
 function start() {
-    setInterval("count()", 1000);
-
     // ボタンを非活性
     var start_buttoon = document.getElementById("start_button");
     start_buttoon.disabled = "disabled";
+
+    // タイマースタート
+    intervalId = setInterval("count()", 1000);
+
 }
